@@ -4,29 +4,34 @@ var songs = [{
       'artist': 'Jetta',
       'album': '',
       'duration': '3:10',
-     'fileName': 'song1.mp3'
+     'fileName': 'song1.mp3',
+     'image': 'song1.jpg'
   },
   {
       'name': 'Shape of you',
       'artist': 'Ed Sheeran',
       'album': '',
       'duration': '3:55',
-      'fileName': 'song2.mp3'
+      'fileName': 'song2.mp3',
+      'image': 'song2.jpg'
   },
   {
       'name': 'Girl I need you',
       'artist': 'Arijit Singh',
       'album': 'Bhaagi',
       'duration': '4:57',
-      'fileName': 'song3.mp3'
+      'fileName': 'song3.mp3',
+      'image': 'song3.jpg'
   },
   {
       'name': 'Tu hai ki nhi',
       'artist': 'Ankit Tiwari',
       'album': 'Roy',
       'duration': '5:34',
-      'fileName': 'song4.mp3'
+      'fileName': 'song4.mp3',
+      'image': 'song4.jpg'
   }]
+  var songNumber = 1;
               function fancyTimeFormat(time)
           {
           // Hours, minutes and seconds
@@ -58,6 +63,12 @@ var songs = [{
           song.pause();
           }
        }
+       function changeCurrentSongDetails(songObj) {
+          $('.current-song-image').attr('src','img/' + songObj.image)
+          $('.current-song-name').text(songObj.name)
+          $('.current-song-album').text(songObj.album)
+          }
+
             function updateCurrentTime() {
                 var song = document.querySelector('audio');
                 var currentTime = Math.floor(song.currentTime); //Math.floor removes decimal
@@ -67,23 +78,24 @@ var songs = [{
                 $('.time-elapsed').text(currentTime);
                 $('.song-duration').text(duration);
               }
-              function addSongNameClickEvent(songName,position) {
+              function addSongNameClickEvent(songObj,position) {
+                  var songName = songObj.fileName;
                   var id = '#song' + position;
                 $(id).click(function() {
                     var audio = document.querySelector('audio');
                     var currentSong = audio.src;
-                    if(currentSong.search(songName) != -1)
+                    if(songNumber != position)
                     {
-                     toggleSong();
-                    }
-                    else {
-                      audio.src = songName;
-                      toggleSong();
-                    }
+                     audio.src = songName;
+                     songNumber=position;
+                     changeCurrentSongDetails(songObj); // Function Call
+                   }
+                   toggleSong();
                     });
                     }
 
               window.onload = function() {
+                changeCurrentSongDetails(songs[0]); //calling function to display the image initially
                 updateCurrentTime();
                 setInterval(function() {
                 updateCurrentTime();
@@ -96,8 +108,9 @@ var songs = [{
                       song.find('.song-artist').text(obj.artist);
                       song.find('.song-album').text(obj.album);
                       song.find('.song-length').text(obj.duration);
-                      addSongNameClickEvent(obj.fileName,i+1)
+                      addSongNameClickEvent(obj,i+1)
                   }
+                    $('#songs').DataTable({paging:false});
                 }
 
                   $('.welcome-screen button').on('click', function() {
@@ -114,8 +127,10 @@ var songs = [{
                   $('.play-icon').on('click', function() {
                     toggleSong();  //here we call function toggleSong by function name
                   });
-                  $('body').on('keypress', function(event) {
-                    if (event.keyCode == 32) {
-                    toggleSong(); //here we call function toggleSong by function name
+                ('body').on('keypress',function(event) {
+                    var target = event.target;
+                    if (event.keyCode == 32 && target.tagName !='INPUT')
+                    {
+                        toggleSong();
                     }
                 });
