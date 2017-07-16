@@ -21,7 +21,7 @@ h1 {
 .wrapper {
     height: 100%;
     width: 100%;
-    background-color: #BBB;
+    background-color: #6666ff;
 }
 
 .welcome-screen {
@@ -44,9 +44,10 @@ h1 {
 
 .main header {
     height: 80px;
-    background-color: #282828;
+    background-color: #e60000; /*#282828;*/
     padding: 1rem;
     color: #FFF;
+    font-size: 1.5rem
 }
 
 .main .content {
