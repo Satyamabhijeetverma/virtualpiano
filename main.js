@@ -1,4 +1,6 @@
-
+var currentSongNumber = 1;
+var willLoop = 0;
+var willShuffle = 0; // will use this soon
 var songs = [{
       'name': 'I would love to change the world',
       'artist': 'Jetta',
@@ -115,7 +117,7 @@ var songs = [{
 
                   $('.welcome-screen button').on('click', function() {
                       var name = $('#name-input').val();
-                      if (name.length > 2) {
+                      if (name.length > 3) {
                           var message = "Welcome, " + name;
                           $('.main .user-name').text(message);
                           $('.welcome-screen').addClass('hidden');
@@ -124,6 +126,15 @@ var songs = [{
                           $('#name-input').addClass('error');
                       }
                   });
+                     $('.fa-random').on('click',function() {
+                      $('.fa-random').toggleClass('disabled')
+                      willShuffle = 1 - willShuffle;
+                      });
+                     $('.fa-repeat').on('click',function() {
+                      $('.fa-repeat').toggleClass('disabled')
+                      willLoop = 1 - willLoop;
+                  });
+
                   $('.play-icon').on('click', function() {
                     toggleSong();  //here we call function toggleSong by function name
                   });

@@ -22,6 +22,9 @@ h1 {
     height: 100%;
     width: 100%;
     background-color: #6666ff;
+    background-image: url(http://hd.wallpaperswide.com/thumbs/music_is_getting_louder-t2.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .welcome-screen {
@@ -44,7 +47,7 @@ h1 {
 
 .main header {
     height: 80px;
-    background-color: #e60000; /*#282828;*/
+    background-color: #e60000; /*#282828;1f1f1f*/
     padding: 1rem;
     color: #FFF;
     font-size: 1.5rem
@@ -205,6 +208,13 @@ table.dataTable tbody tr {
     width: 400px;
     margin-bottom: 1rem;
     font-size: 16px;
+}
+.player-buttons .fa {
+    margin-right: 2rem;
+}
+
+.fa.disabled {
+    color: gray;
 }
 
 /*One Last Thing. Let's turn off the page count. This doesn't look nice
