@@ -16,13 +16,14 @@ body {
 h1 {
     border: 0;
     margin: 0;
+    font-size: 32px;
 }
 
 .wrapper {
     height: 100%;
     width: 100%;
-    background-color: #6666ff;
-    background-image: url(http://hd.wallpaperswide.com/thumbs/music_is_getting_louder-t2.jpg);
+    /*background-color: #6666ff;*/
+    background-image: url(http://hd.wallpaperswide.com/thumbs/pioneer_dj-t2.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -34,6 +35,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #FFF;
 }
 
 .main {
@@ -46,11 +48,14 @@ h1 {
 }
 
 .main header {
-    height: 80px;
+    height: 65px;
     background-color: #e60000; /*#282828;1f1f1f*/
-    padding: 1rem;
+    padding: 0;
     color: #FFF;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+}
+.main h1{
+  color: #FFF;
 }
 
 .main .content {
@@ -77,6 +82,7 @@ h1 {
 
 .right.floated {
     float: right;
+    margin-right: 8px;
 }
 
 .clickable {
@@ -116,7 +122,7 @@ h1 {
 }
 
 .main .content {
-    width: 800px;
+    width: 500px;
     margin: 2rem auto;
 }
 
@@ -202,7 +208,8 @@ table.dataTable tbody tr {
 }
 
 #songs_filter {
-    color: transparent;
+    color: #6666ff;
+
 }
 #songs_filter input {
     width: 400px;

@@ -32,6 +32,14 @@ var songs = [{
       'duration': '5:34',
       'fileName': 'song4.mp3',
       'image': 'song4.jpg'
+  },
+  {
+      'name': 'Faded',
+      'artist': 'Alan walker',
+      'album': 'Faded',
+      'duration': '3:32',
+      'fileName': 'song5.mp3',
+      'image': 'song5.jpg'
   }]
   var songNumber = 1;
               function fancyTimeFormat(time)
@@ -102,7 +110,8 @@ var songs = [{
                 setInterval(function() {
                 updateCurrentTime();
                 },1000);
-                  for(var i =0; i < songs.length;i++) {
+
+                    for(var i =0; i < songs.length;i++) {
                       var obj = songs[i];
                       var name = '#song' + (i+1);
                       var song = $(name);
@@ -114,7 +123,20 @@ var songs = [{
                   }
                     $('#songs').DataTable({paging:false});
                 }
-
+                  $('audio').on('ended',function() {
+                    var audio = document.querySelector('audio');
+                    if(currentSongNumber < 5) {
+                      var nextSongObj = songs[currentSongNumber];
+                       audio.src = nextSongObj.fileName; // Change Soure
+                       toggleSong(); // Play Next Song
+                       changeCurrentSongDetails(nextSongObj); // Update Image
+                       currentSongNumber = currentSongNumber + 1; // Change State // Play the next song
+                    }
+                    else {
+                       $('.play-icon').removeClass('fa-pause').addClass('fa-play').addClass('fa-play');// Stop Playing
+                       audio.currentTime = 0;
+                    }
+                    })
                   $('.welcome-screen button').on('click', function() {
                       var name = $('#name-input').val();
                       if (name.length > 3) {

@@ -1,0 +1,149 @@
+#instrument
+{
+	height: 50%;
+	border-style: solid solid solid solid;
+  width: 80px;
+	font-family: Helvetica;
+	border-color: black;
+
+}
+#organ
+{
+	border-style: solid solid solid solid;
+	font-family: Helvetica;
+	border-color: black;
+	background-color: #6666ff;
+  color : black;
+}
+
+#select{
+border: solid black;
+background-color: white;
+border: 1px;
+}
+
+#piano
+{
+	border-style: solid solid solid solid;
+	font-family: Helvetica;
+	border-color: Black;
+	background-color:#6666ff;
+  color : black;
+}
+
+#guitar
+{
+	border-style: solid solid solid solid;
+	font-family: Helvetica;
+	border-color: Black;
+	background-color: #6666ff;
+  color : black;
+}
+
+#edm
+{
+	border-style: solid solid solid solid;
+	font-family: Helvetica;
+	border-color: black;
+	background-color: #6666ff;
+  color : black;
+}
+
+#edm:hover {
+    background-color: white;
+}
+
+
+#guitar:hover {
+    background-color: white;
+}
+
+
+#piano:hover {
+    background-color: white;
+}
+
+#organ:hover {
+    background-color: white;
+}
+
+
+#keyboard {
+	height: 180px;
+	margin: auto;
+}
+
+.key .label{
+	position: absolute;
+	bottom: 5px;
+	text-align: center;
+
+}
+
+
+.key {
+	height: 100%;
+	font-family: Helvetica;
+	width: 50px;
+	margin: -1px;
+	border-style: none solid solid solid;
+	border-radius: 0px 0px 7px 7px;
+	border-color: black;
+	border-width: 1px;
+	background-color: white;
+  cursor: pointer;
+  box-shadow: 0px 5px 1px rgba(32,32,32,0.2);
+	position: absolute;
+	font-size: 12px;
+	text-align: center;
+
+}
+
+
+.black {
+    background-color: rgb(32,32,32);
+    color: #ffffff;
+    z-index: 1;
+    text-shadow: 0px -1px 1px rgba(255,255,255,0.5);
+		margin-bottom: 60px;
+		height: 120px;
+}
+#keyboard {
+	height: 180px;
+	margin: auto;
+	background-color: red;
+	position: relative;
+}
+
+.keyboard-holder {
+    margin: 30px auto;
+    height: 200px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+}
+
+div {
+    display: block;
+}
+
+.white {
+    background-color: #ffffff;
+    color: rgb(32,32,32);
+    z-index: 0;
+    text-shadow: 0px 1px 1px rgba(32,32,32,0.5);
+
+}
+
+body {
+    font-family: Helvetica;
+    color: rgb(32,32,32);
+    padding: 10px;
+    background-color: #FFF;
+  }
+
+.key:hover {
+    background-color: rgb(255,192,32);
+}
