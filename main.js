@@ -87,7 +87,13 @@ var songs = [{
                 duration = fancyTimeFormat(duration);
                 $('.time-elapsed').text(currentTime);
                 $('.song-duration').text(duration);
+                var time=song.currentTime/song.duration*100;
+                $('.progress-filled').css("width",time+"%");
               }
+              function timejump(){
+               var song =  document.querySelector('audio')
+               song.currentTime = song.duration - 5;
+               }
               function addSongNameClickEvent(songObj,position) {
                   var songName = songObj.fileName;
                   var id = '#song' + position;
