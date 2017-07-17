@@ -19,13 +19,32 @@ h1 {
     font-size: 32px;
 }
 
-.wrapper {
+.wrapper{
     height: 100%;
     width: 100%;
     /*background-color: #6666ff;*/
     background-image: url(http://hd.wallpaperswide.com/thumbs/pioneer_dj-t2.jpg);
     background-size: cover;
     background-position: center;
+}
+.textbox {
+    border: 1px solid #848484;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    outline:0;
+    height:45px;
+    width: 270px;
+    padding-left:10px;
+    padding-right:10px;
+    font-size: 18px;
+  }
+.button1 {
+  height:45px;
+  width: 70px;
+  border-radius: 4px;
+  background-color: #99ccff;
+  font-size: 18px;
 }
 
 .welcome-screen {
